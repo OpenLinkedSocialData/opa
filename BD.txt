@@ -1,0 +1,378 @@
+*) em cada artigo, o profile_id é o da comunidade ou do perfil em que foi publicado
+enquanto o created_by (ainda não está no master) aponta p quem criou o artigo.
+*) arrumar "g.add((ART,dc.creator,ind))" para contemplar artigos publicados em comunidade.
+*) 147 arrumar condicao para adicionar especificacoes aos artigos OK
+*) 158 o profile_id é o mesmo, se não bater, é erro!
+*) Fazer URL p comentários (tipo http://www.participa.br/profile/participacaosocial/comment/edit/13482)
+*) Somente o body dos articles e do comments deixam sujeira. OK
+
+
+*** dado usado para triplificação
+***** dado usado para formação de URI
+******* para ser triplificada em versão próxima
+
+tabela profiles
+1409 entradas
+
+0 - id, de 1 a 11808
+1 - name, o nome completo de cada perfil (seja pessoa, comunidade ou empresa) ***
+2 - type, o tipo do perfil: "Person", "Community" ou "Enterprise". ***
+3 - identifier, identificador do usuário, suponho que seja o <users.login>, pois todas as entradas do BD são. *****
+4 - environment_id, todos com valor 1
+5 - active, todos True
+6 - address, 58 valores string com endereço, o resto None
+7 - contact_phone, todos None
+8 - home_page_id, 168 ids numéricas, o resto é None
+9 - user_id, valor numérico para cada perfil, 24 valores None para as "Enterprise"s e "Community"s.
+10 - region_id, todos None
+11 - data, dados adicionais sobre vínculos profissionais e institucionais, e sobre especificações dos templates e acessos. *******
+12 - created_at, data e hora (creio que da criação do perfil) ***
+13 - lat, 69 valores de latitude, o resto é None ***
+14 - lng, 69 valores de longitude, o resto é None ***
+15 - geocode_precision, tudo None
+16 - enabled, tudo True
+17 - nickname, tudo None
+18 - custom_header, 11 valores com string com info HTML para o cabeçalho (suponho), o resto é None
+19 - custom_footer, 11 valores com string com info HTML para o footer, o resto é None
+20 - theme, 21 valores dentre default, conference e participa-theme. O resto é None
+21 - public_profile, 1330 valores True, o resto é False ***
+22 - birth_date, tudo None
+23 - preferred_domain_id, tudo None
+24 - updated_at, data para todos os perfis ***
+25 - visible, 612 valores True, resto False ***
+26 - image_id, 248 valores numéricos, o resto é None
+27 - validated, todos os valores True, 2 valores False
+28 - cnpj, tudo None
+29 - national_region_code, tudo None
+30 - is_template, quatro valores True, o resto False
+31 - template_id, 513 valores numéricos, o resto é None
+32 - redirection_after_login, tudo None
+
+
+=====================
+
+tabela users
+1385 entradas.
+
+0 - id, de 2 a 1773
+1 - login, o login name, como rfabbri ou fabriciosolagna, todos parecem ter somente letras, números, ponto e underline. Suponho que seja o <profiles.identifiers>, pois todas as entradas do BD são iguais.
+2 - emails, de cada usuário cadastrado no participa. ***
+3 - crypted_password, o pass encriptado.
+4 - salt, mais coisas encriptadas do usuário, não sei quais são.
+5 - created_at, data de criação do usuário
+6 - updated_at, data de atualização do usuário (seu perfil?).
+7 - remember_token, todos None.
+8 - remember_token_expires_at, todos None
+9 - terms_of_use, parece ter algumas mudanças até o décimo sétimo usuário, depois disso estabiliza
+10 - terms_accepted, todos 1, 10 valores são None
+11 - environment_id, todos com valor 1 ou "1"
+12 - password_type, todos "salted_sha1"
+13 - enable_email, todos False
+14 - last_chat_status, todos string vazia ("")
+15 - chat_status, todos string vazia ("")
+16 - chat_status_at, todos None
+17 - activation_code, apenas 2 valores não são None, e estão encriptados.
+18 - activated_at, datas para cada usuário, 2 None somente.
+
+=====================
+
+tabela articles
+
+0 - ids de 1 a 62116
+1 - name, os titulos dos artigos ***
+2 - slug, provavelmente para uso nas urls
+3 - path, caminho para o artigo, creio que complemente urls de grupos, blogs e perfis *****
+4 - parent_id, pouco mais de 1/3 dos artigos possuem um parent_id, que talvez seja id de algum meta artigo, não sei.
+5 - body, existem campos vazios, com None, que comecam com "--- ", e os que posseum informacao valida ***
+6 - abstract, há vazios "" e com None e com info real ***
+7 - profile_id,
+8 - updated_at, campo datetime ***
+9 - created_at, campo datetime ***
+10 - last_changed_by_id, None ou inteiro, que nunca bate com o profile_id, portanto parece ser somente para o caso de um usuário diferente alterar o artigo *******
+11 - version, creio ser a versao do documento, embora haja um artigo com version 13296
+12 - type 'WorkAssignmentPlugin::WorkAssignment', 'Forum', 'RawHTMLArticle', 'Event', 'Blog', 'CommunityTrackPlugin::Track', 'TextileArticle','CommunityTrackPlugin::Step', 'UploadedFile', 'RssFeed', 'TinyMceArticle', 'Folder', 'Gallery' ***
+13 - size, no caso de haver uploaded file
+14 - content_type, None em todos os casos que não são image/jpeg
+15 - filename, nome do arquivo subido
+16 - height, quando o "artigo" eh um uploaded file
+17 - width, quando é um uploaded file
+18 - comments_count, jah contemplado com o source_id dos comentarios
+19 - advertise, boleana que suponho ser usado para marcar artigos que devem ser difundidos ou nos quais propagandas devem ser veiculadas.
+20 - published, booleana, para o caso de artigos publicados.
+21 - start_date, presente em 2 casos: eventos e 'CommunityTrackPlugin::Step'
+22 - end_date, mesmo caso que o anterior
+23 - children_count,  suponho ser a contagem de comentários ou artigos sublocados.
+24 - accept_comments, suponho ser boleana para aceitar comentarios ou nao
+25 - reference_article_id, apenas dois valores nao None, nao sei o que seja.
+26 - setting, opções do artigo
+27 - notify_comments, quase tudo True, alguns False
+28 - hits, suponho ser o numero de visitas recebidas pelo artigo.
+29 - published_at, campo datetime para cada um. ***
+30 - source, tudo None ou string vazia
+31 - highlighted, quase tudo False, alguns True
+32 - external_link, tudo None ou vazio
+33 - thumbnails_processed, True para UploadedFile articles.
+34 - is_image, boleano
+35 - translation_of_id, tudo None
+36 - language, tudo pt, None ou vazio.
+37 - source_name, tudo None ou string vazia
+38 - license_id, menos de 0,5% possui uma id de licensa, mas acontece com Blog, Forum e TinyMceArticle
+39 - image_id, para os casos de imagem.
+40 - position, inteiros presentes somente no caso de 'CommunityTrackPlugin::Step'
+
+===========
+
+tabela comments
+
+0 - ids de 22 a 24k
+1 - title, uma boa parte é "teste de stress" e há "" como título vazio ***
+2 - body, ok, sempre tem body ***
+3 - source ID, creio ser o ID do post/artigo ou do comentário ao qual o comentário é feito
+4 - author id, creio ser o profile id do autor (n o user id)
+5 - name, campo ou com None ou com string vazia ""
+6 - email, ou com None ou com string vazia ""
+7 - created_at, com a data e hora certinho da criação do comentário ***
+8 - reply_of_id, quase tudo None, mas 195 itens possuem id específica, talvez procurar no código do noosfero. Talvez sejam comentários. Nao bate com o source ID, por onde pode-se supor que sejam as ids dos comentarios aos quais sao reply. ***
+9 - ip_address, todo comentário tem um IP, por onde podemos observar coordenadas geográficas. ***
+10 - spam, 1% não True, não parece adicionar informação
+11 - source_type, quase tudo "Article", mas também 8 "ActionTracker::Record".
+12 - user_agent, prove do browser e sistema operacional usado para fazer o comment. Interessante, mas deixado de lado por enquanto.
+13 - referrer, links que parecem ser todos para páginas do participa no qual estah o comentário *****
+14 - group_id, 1/4 dos comentários possuem uma ID aqui. Após inspeção, não consegui saber a que esta ID se refere.
+
+============
+
+tabela friendships
+
+0 - ids das friendships
+1 - person_id, ids das pessoas entre 18 e 12k. Acredito serem ids dos profiles.
+2 - friend_id, ids das pessoas entre 18 e 12k. As amizades sao duplicadas x ->y e y->x
+3 - created_at, data do firmamento da amizade, creio
+4 - group, nome do grupo da amizade, suponho que seja o grupo que o usuario categorizou a amizade. Nao incluida na triplificacao
+
+=============
+Como estão registrados os grupos no BD do participa? Estão nos profiles, com o tipo "Community", mas onde estão
+os vínculos dos usuários com cada comunidade?
+Quais informações queremos a mais? Alguma podemos cortar desta disponibilização?
+As uris dos recursos do participa estão ok? (participante, comunidade, empresa), artigo, comentário.
+As uris do DC e do foaf e da opa, estão usadas corretamente?
+Há proposta de substituição de alguma das URIs (por outra do DC, FOAF, WSG 84, etc)?
+Podemos achar URIs para cada um dos tipos de participação, escritas como literais. Ou podemos definir
+URIs dentro da OPA para elas. Para o uso atual, é razoável a definição com o literal, pois acomoda automaticamente
+mais tipos de participação.
+
+
+
+
+=============
+
+
+
+select distinct type from articles where type ilike '%art%';
+
+=============
+
+
+MUDO opa:post? para opa:article?
+não estou usando as classes ForumPost.. etc,
+apenas Post, com a qual relacionamos todos
+os itens da tabela articles, com hasType (article type)
+
+
+=====================
+
+tabela articles
+
+name*
+slug
+path
+parent_id (?)
+body*
+abstract*
+profile_id
+updated_at*
+created_at*
+last_changed_by_id
+version
+type
+size
+content_type
+filename
+height
+width
+comments_count
+advertise
+published
+start_date
+end_date
+children_count
+accept_comments
+reference_article_id
+setting
+cotify_comments
+hits
+published_at
+source
+highlighted
+external_link
+thumbnails_processed
+is_image
+translation_of_id
+language
+source_name
+license_id
+image_id
+position
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=========
+
+tabela users
+campos
+email
+created_at
+updated_at
+activated_at
+terms_accepted
+environment_id ?
+last_chat_status ? (parece vazio)
+chat status ?
+chat status at ?
+
+tabela profiles
+name
+type
+identifier
+environment_id ?
+active
+address
+contact_phone **
+home_page_id (tem q buscar na tabela a homepage) **
+user_id (usa p completar com os dados da tabela users) **
+region_id ?
+data (tentar importar dados sobre atividade profissional, sites, parece não haver padrao forte nestes dados)
+created_at (parece equivalente aa coluna de mesmo nome da tabela users)
+lat
+lng
+geocode_precision ? (tudo vazio)
+enabled ? (tudo true)
+nickname ? (tudo vazio)
+custom_header -
+custom footer -
+theme
+public_profile
+birth_date ? (td vazio)
+preferred_domain_id ? (td vazio)
+updated_at
+visible
+image_id - (ao menos que consigamos infos da imagem ou url p baixa-la) ***********
+validated ? (tudo true menos 2 primeiros registros)
+cnpj ? (td vazio)
+national_region_code - (td vazio)
+is_template ? (o que é isso)
+template_id ?
+redirection_after_login ? (tudo vazio)
+
+
+
+da tabela users, aproveitei somente o email. As datas de criação
+coincidem com as datas de criação dos profiles (estes últimos tem alguns milissegundos a mais).
+A data de atualização dos users não são usadas (ao menos não é comum) e não tem muita utilidade.
+
+
+
+
+
+
+
+
+
+===========
+
+#\c blog_test
+#GRANT ALL PRIVILEGES ON DATABASE blog_test to rails;
+#GRANT ALL PRIVILEGES ON TABLE users TO r;
+
+Copy (Select email From users) To '/tmp/TXT.txt';
+
+===========
+
+======================
+
+BD articles
+
+
+'id',
+ 'name', *
+ 'slug',
+ 'path',
+ 'parent_id',
+ 'body', *
+ 'abstract', *
+ 'profile_id',
+ 'updated_at', *
+ 'created_at', *
+ 'last_changed_by_id', *
+ 'version',
+ 'type', *
+ 'size',
+ 'content_type',
+ 'filename',
+ 'height',
+ 'width',
+ 'comments_count',
+ 'advertise',
+ 'published',
+ 'start_date',
+ 'end_date',
+ 'children_count',
+ 'accept_comments',
+ 'reference_article_id',
+ 'setting',
+ 'notify_comments',
+ 'hits',
+ 'published_at',
+ 'source',
+ 'highlighted',
+ 'external_link',
+ 'thumbnails_processed',
+ 'is_image',
+ 'translation_of_id',
+ 'language',
+ 'source_name',
+ 'license_id',
+ 'image_id',
+ 'position'
+
+
+há no type 13 valores diferentes:
+ RssFeed -> pra que? o parent_id é o article que o feed disponibiliza? IGNORADAS ESTAS LINHAS
+ UploadedFile 
+ Forum
+ TextileArticle
+ RawHTMLArticle
+ Folder
+ TinyMceArticle
+ CommunityTrackPlugin::Track
+ Event
+ Blog
+ Gallery
+ CommunityTrackPlugin::Step
+ WorkAssignmentPlugin::WorkAssignment

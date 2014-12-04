@@ -28,9 +28,6 @@ import re
 TAG_RE = re.compile(r'<[^>]+>')
 def remove_tags(text):
     return TAG_RE.sub('', text)
-#from xml.etree import ElementTree
-#def remove_tags(text):
-#    ''.join(ElementTree.fromstring(text).itertext())
 
 ###########
 ### Banco de dados do Participa.br
@@ -95,10 +92,8 @@ g.namespace_manager.bind("dc2", "http://purl.org/dc/elements/1.1/")
 g.namespace_manager.bind("dc", "http://purl.org/dc/terms/")    
 g.namespace_manager.bind("sioc", "http://rdfs.org/sioc/ns#")    
 g.namespace_manager.bind("tsioc", "http://rdfs.org/sioc/types#")    
-#g.namespace_manager.bind("skos", "http://www.w3.org/2004/02/skos/core#")    
 g.namespace_manager.bind("schema", "http://schema.org/")
 g.namespace_manager.bind("part", "http://participa.br/")    
-#g.load("./opa.owl")
 
 ##############
 ### Preparando para triplificação
@@ -122,8 +117,11 @@ def Q(mstr):
     return pp[PN.index(mstr)]
 def QA(mstr):
     return aa[AN.index(mstr)]
+def QC(mstr):
+    return cc[CN.index(mstr)]
 
-
+def QF(mstr):
+    return fr[FRN.index(mstr)]
 ############## INÍCIO DA TRIPLIFICAÇÃO
 ### Rotina de triplificação dos perfis, artigos e comentários
 G(U(part),rdf.type,opa.ParticipationPortal)
@@ -131,148 +129,105 @@ G(U(part),rdf.type,opa.ParticipationPortal)
 
 for pp in profiles:
     ### tabela profiles
-    #ind=r.URIRef(part+"profile/"+urllib.quote(pp[PN.index("identifier")]))
     ind=opa.Member+"#"+Q_("identifier")
     G(ind,rdf.type,opa.Member)
-    #g.add((U(part),dc.contributor,ind))
-    #g.add((U(part),opa.member,ind))
-    #g.add((ind,ops.hasRole,ops.Executer))
-    #g.add((ind,foaf.name,r.Literal(pp[PN.index("name")])))
-    #g.add((ind,opa.name,L(pp[PN.index("name")])))
     G( ind,opa.name, L(Q("name")) )
     q=Q("type")
     if q=="Person":
         G(ind,rdf.type,opa.Participant)
-#        G(ind,rdf.type,ops.Participant)
-#        G(ind,rdf.type,foaf.Person)
         G( ind,opa.mbox,U("mailto:%s"%(Qu("email"),)) )
-#        G( ind,foaf.mbox,r.URIRef("mailto:%s"%(Qu("email"),)) )
     elif q=="Community":
-        #g.add((ind,rdf.type,foaf.Group))
         G(ind,rdf.type,opa.Group)
     else:
-        #g.add((ind,rdf.type,foaf.Organization)) 
         G(ind,rdf.type,opa.Organization)
-    #is_visible= r.Literal(pp[PN.index("visible")],datatype=xsd.boolean)
     
     G(ind,opa.visibleProfile, L(Q("visible"),xsd.boolean) )
-    #g.add((ind,opa.publicProfile,r.Literal(pp[PN.index("public_profile")],datatype=xsd.boolean)))
     G(ind,opa.publicProfile, L(Q("public_profile"),xsd.boolean))
     if Q("lat") and Q("lng"):
         lugar=r.BNode()
-        # usando lat lon do WGS84
-        # Por princípio, aqui também usa namespace interno, embora
-        # eu ao menos estranhe
-
-        #g.add((lugar,rdf.type,wsg.Point ))
         G(lugar,rdf.type,opa.Point )
-        #g.add((ind, foaf.based_near, lugar ))
         G(ind, opa.based_near, lugar )
-        #g.add((lugar,wsg.lat, r.Literal(pp[PN.index("lat")])))
         G(lugar,opa.lat, L(Q("lat")))
-        #g.add((lugar,wsg.long,r.Literal(pp[PN.index("lng")])))
         G(lugar,opa.long,L(Q("lng")))
 
-    # usando Dublin Core Terms
-    #g.add((ind,dc.created,r.Literal(pp[PN.index("created_at")],datatype= xsd.dateTime)))
     G(ind,opa.created,L(Q("created_at"),xsd.dateTime))
-    #g.add((ind,dc.modified,r.Literal(pp[PN.index("updated_at")],datatype=xsd.dateTime)))
     G(ind,opa.modified,L(Q("updated_at"),xsd.dateTime))
 
     ### tabela artigos
     profile_id=Q("id")
     AA=[i for i in articles if i[AN.index("profile_id")]==profile_id]
-    #print "autor"
     for aa in AA:
-        #if aa[AN.index("published")] and Q("public_profile"):
-        print "artigo"
         if QA("published") and Q("public_profile"):
-            #ART=r.URIRef(part+urllib.quote(pp[PN.index("identifier")])+"/"+urllib.quote(aa[AN.index("path")]));
-            ART = opa.Article+"#"+QQ(QA("path"));
+            ART = opa.Article+"#"+str(QA("id"))
             G(ART,rdf.type,opa.Article)
-            #g.add((ind,ops.performsParticipation,ART))
             G(ART,opa.publisher,ind)
-            #g.add((ART,dc.creator,ind))
             tipo=QA("type")
-            #G(ART,dc2.type,L(tipo))
             G(ART,opa.atype,L(tipo))
-            print tipo
             if sum([foo in tipo for foo in ["::","Article","Event","Blog"]]):
                 name=QA("name")
                 if name !="Blog":
-                    g.add((ART,dc2.title,r.Literal(name)))
+                    G(ART,opa.title,r.Literal(name))
                 if tipo=='CommunityTrackPlugin::Track':
-                    g.add((ART,dc.type,opa.ParticipationTrack))
+                    G(ART,opa.atype,opa.ParticipationTrack)
                 if tipo=='CommunityTrackPlugin::Step':
-                    # renomeada ParticipationEvent para ParticipationStep
-                    g.add((ART,dc.type,opa.ParticipationStep))
-                    pid=aa[AN.index("parent_id")]
+                    G(ART,opa.atype,opa.ParticipationStep)
+                    pid=QA("parent_id")
                     aa2=[xx for xx in articles if xx[AN.index("id")]==pid][0]
                     pid=aa2[AN.index("profile_id")]  # o pid é o mesmo sempre!
                     pp2=[xx for xx in profiles if xx[PN.index("id")]==pid][0]
-                    ART2=r.URIRef(part+urllib.quote(pp2[PN.index("identifier")])+"/"+urllib.quote(aa2[AN.index("path")].decode("utf8")));
-                    # renomeadas propriedades da opa
-                    g.add((ART2,opa.hasStep,ART))
-                    g.add((ART,opa.isStepOf,ART2))
-            body=aa[AN.index("body")]
+                    ART2 = opa.Article+"#"+str(aa2[AN.index("id")])
+                    G(ART2,opa.hasStep,ART)
+            body=QA("body")
             if (body!=None) and ( not body.startswith("--- ")):
-                g.add((ART,schema.articleBody,r.Literal(remove_tags(body)) ))
-            abst=aa[AN.index("abstract")]
+                G(ART,opa.body,L(remove_tags(body)) )
+            abst=QA("abstract")
             if abst:
-                g.add((ART,dc.abstract,r.Literal(remove_tags(abst)) ))
-            g.add((ART,dc.created,r.Literal( aa[AN.index("created_at")],datatype=xsd.dateTime)))
-            g.add((ART,dc.modified,r.Literal(aa[AN.index("updated_at")],datatype=xsd.dateTime)))
-            g.add((ART,dc.issued,r.Literal(aa[AN.index("published_at")],datatype=xsd.dateTime)))
+                G( ART,opa.abstract,r.Literal(remove_tags(abst)) )
+            G(ART,opa.created,L( QA("created_at"),xsd.dateTime))
+            G(ART,opa.modified,L(QA("updated_at"),xsd.dateTime))
+            G(ART,dc.issued,L(QA("published_at"),xsd.dateTime))
 
     ### tabela comentários
     CC=[i for i in comments if i[CN.index("author_id")]==profile_id]
     for cc in CC:
-        COM=r.URIRef(part+"comment/%i"%(cc[CN.index("id")],))
-        g.add((ind,ops.performsParticipation,COM))
-        g.add((COM,dc.creator,ind))
-        g.add((COM,dc2.type,r.Literal("Comment")))
-        g.add((COM,dc.type,tsioc.Comment))
+        COM=opa.Comment+"#"+str(QC("id"))
+        G(COM,rdf.type,opa.Comment)
+        G(COM,opa.creator,ind)
         if cc[CN.index("title")]:
-            g.add((COM,dc.title,r.Literal(cc[CN.index("title")])))
-        g.add((COM,schema.text,r.Literal(remove_tags(cc[CN.index("body")]))))
-        g.add((COM,dc.created,r.Literal(cc[CN.index("created_at")],datatype=xsd.dateTime)))
-        if cc[CN.index("source_type")]!="ActionTracker::Record":
-            ART=cc[CN.index("referrer")]
+            G(COM,opa.title,L(QC("title")))
+        G(COM,opa.body,L(remove_tags(QC("body"))))
+        G(COM,opa.created,L(QC("created_at"),xsd.dateTime))
+        if QC("source_type")!="ActionTracker::Record":
+            ART=QC("referrer")
             if ART:
-                ART=ART.replace("http://psocial.secretariageral.gov.br","http://participa.br").replace("http://psocial.sg.gov.br","http://participa.br")
-                g.add((r.URIRef(ART),sioc.has_reply,COM))
+                ART = opa.Article+"#"+str(QC("source_id")) # VERIFICAR
+                G(ART,opa.hasReply,COM)
 
-            rip=cc[CN.index("reply_of_id")]
+            rip=str(QC("reply_of_id"))
             if rip:
-                turi=part+"comment/%i"%(rip,)
-                g.add((r.URIRef(turi) , sioc.has_reply, COM ))
+                turi=opa.Comment+"#"+rip
+                G(turi , opa.hasReply , COM )
 
-            g.add((COM,sioc.ip_address,r.Literal(cc[CN.index("ip_address")])))
+            G(COM,opa.ip,L(QC("ip_address")))
 
 ### tabela friendships
-AM=[]    
+AM=[]
 for fr in friendships:
-    fid1=fr[FRN.index("person_id")]
-    fid2=fr[FRN.index("friend_id")]
+    fid1=QF("person_id")
+    fid2=QF("friend_id")
     am=set([fid1,fid2])
     if am not in AM:
         AM.append(am)
-        fid1_,fid2_=[pp[PN.index("identifier")] for pp in profiles if pp[0] in am]
-        fid1_,fid2_=urllib.quote(fid1_),urllib.quote(fid2_)
-        ind1=r.URIRef(part+"profile/%s"%(fid1_,))
-        ind2=r.URIRef(part+"profile/%s"%(fid2_,))
-        g.add((ind1,foaf.knows,ind2))
-        g.add((ind2,foaf.knows,ind1))
-        tfr=r.URIRef(part+"friendship/%s/%s"%(fid1_,fid2_))
-        g.add((tfr,rdf.type,opa.Friendship))
-        g.add((tfr,foaf.member,ind1))
-        g.add((tfr,foaf.member,ind2))
-        g.add((ind1,dc.created,r.Literal(fr[FRN.index("created_at")],datatype=xsd.dateTime)))
-        tfr2=r.URIRef(part+"friendship/%s/%s"%(fid2_,fid1_))
-        g.add((tfr,skos.exactMatch,tfr2))
-f=open("storeOpaPopulada.rdf","wb")
+        ind1,ind2=[(opa.Member+"#"+Q_("identifier")) for pp in profiles if pp[0] in am]
+        g.add((ind1,opa.knows,ind2))
+        tfr=r.URIRef(opa.Friendship+"#"+("%s-%s"%tuple(am)))
+        G(tfr,rdf.type,opa.Friendship)
+        G(tfr,opa.member,ind1)
+        G(tfr,opa.member,ind2)
+        G(ind1,opa.created,L(QF("created_at"),xsd.dateTime))
+f=open("participaTriplestore.rdf","wb")
 f.write(g.serialize())
 f.close()
-f=open("storeOpaPopuladaTTL.rdf","wb")
+f=open("participaTriplestore.ttl","wb")
 f.write(g.serialize(format="turtle"))
 f.close()
