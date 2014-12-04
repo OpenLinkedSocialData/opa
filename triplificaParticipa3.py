@@ -109,6 +109,9 @@ def L(data, datatype_=None):
         return r.Literal(data, datatype=datatype_)
     else:
         return r.Literal(data)
+def fparse(mstring):
+    foo=[i for i in mstring.split("\n")[1:-1] if i]
+    return dict([[j.strip().replace('"',"") for j in i.split(":")[1:]] for i in foo if  len(i.split(":"))==3])
 U=r.URIRef
 QQ=urllib.quote
 def Q_(mstr):
@@ -152,6 +155,29 @@ for pp in profiles:
 
     G(ind,opa.created,L(Q("created_at"),xsd.dateTime))
     G(ind,opa.modified,L(Q("updated_at"),xsd.dateTime))
+    # campo composto
+    campos=fparse(Q("data"))
+    if "city" in campos.keys():
+        cid=campos["city"]
+        if cid:
+            G(ind,opa.city,L(cid))
+    if "country" in campos.keys():
+        cid=campos["country"]
+        if cid:
+            G(ind,opa.country,L(cid))
+    if "state" in campos.keys():
+        cid=campos["state"]
+        if cid:
+            G(ind,opa.state,L(cid))
+    if "professional_activity" in campos.keys():
+        cid=campos["professional_activity"]
+        if cid:
+            G(ind,opa.professionalActivity,L(cid))
+    if "organization" in campos.keys():
+        cid=campos["organization"]
+        if cid:
+            G(ind,opa.organization,L(cid))
+
 
     ### tabela artigos
     profile_id=Q("id")
@@ -166,7 +192,7 @@ for pp in profiles:
             if sum([foo in tipo for foo in ["::","Article","Event","Blog"]]):
                 name=QA("name")
                 if name !="Blog":
-                    G(ART,opa.title,r.Literal(name))
+                    G(ART,opa.title,L(name))
                 if tipo=='CommunityTrackPlugin::Track':
                     G(ART,opa.atype,opa.ParticipationTrack)
                 if tipo=='CommunityTrackPlugin::Step':
@@ -182,7 +208,7 @@ for pp in profiles:
                 G(ART,opa.body,L(remove_tags(body)) )
             abst=QA("abstract")
             if abst:
-                G( ART,opa.abstract,r.Literal(remove_tags(abst)) )
+                G( ART,opa.abstract,L(remove_tags(abst)) )
             G(ART,opa.created,L( QA("created_at"),xsd.dateTime))
             G(ART,opa.modified,L(QA("updated_at"),xsd.dateTime))
             G(ART,dc.issued,L(QA("published_at"),xsd.dateTime))
