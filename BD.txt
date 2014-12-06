@@ -151,6 +151,19 @@ tabela friendships
 4 - group, nome do grupo da amizade, suponho que seja o grupo que o usuario categorizou a amizade. Nao incluida na triplificacao
 
 =============
+
+tabela votes
+
+0 - id dos votos de 7 a 2106 OK
+1 - voto, +1 ou -1 OK
+2 - votable_id, a id do item votado OK
+3 - votable_type, somente Comment ou Article OK
+4 - voter_id OK
+5 - voter_type, tudo Profile OK
+6 - created_at, tudo datetime
+7 - updated_at, tudo igual created_at OK
+
+=============
 Como estão registrados os grupos no BD do participa? Estão nos profiles, com o tipo "Community", mas onde estão
 os vínculos dos usuários com cada comunidade?
 Quais informações queremos a mais? Alguma podemos cortar desta disponibilização?
@@ -162,7 +175,10 @@ URIs dentro da OPA para elas. Para o uso atual, é razoável a definição com o
 mais tipos de participação.
 
 
-
+Triplifico categories?
+taggings
+tags (id, nome)
+taggings (id, tag_id, taggeble_id, taggeble_type, created_at)
 
 =============
 
