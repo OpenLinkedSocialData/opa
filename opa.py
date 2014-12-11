@@ -578,10 +578,10 @@ for tkey in kk:
 
 #A.draw("imgs/OCD_.png",prog="twopi",args="-Granksep=14")
 #A.draw("imgs/OCD_2.png",prog="dot",args="-Granksep=14 -Gsize='1000,1000'")
-A.draw("imgs/OCD_.png",prog="dot")
-A.draw("imgs/OCD_2.png",prog="circo")
-A.draw("imgs/OCD_3.png",prog="fdp")
-A.draw("imgs/OCD_4.png",prog="twopi")
+A.draw("imgs/OPa_.png",prog="dot")
+A.draw("imgs/OPa_2.png",prog="circo")
+A.draw("imgs/OPa_3.png",prog="fdp")
+A.draw("imgs/OPa_4.png",prog="twopi")
 print("Wrote geral _ ")
 
 # figura com as propriedades
