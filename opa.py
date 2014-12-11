@@ -22,6 +22,21 @@ def fazQuery(query):
     print time.time()-NOW
     return results["results"]["bindings"]
 g=r.Graph()
+g.namespace_manager.bind("ops", "http://purl.org/socialparticipation/ops/")    
+g.namespace_manager.bind("rdf", r.namespace.RDF)    
+g.namespace_manager.bind("rdfs", r.namespace.RDFS)    
+g.namespace_manager.bind("foaf", r.namespace.FOAF)    
+g.namespace_manager.bind("xsd", r.namespace.XSD)    
+g.namespace_manager.bind("owl", r.namespace.OWL)    
+g.namespace_manager.bind("opa", "http://purl.org/socialparticipation/opa/")
+g.namespace_manager.bind("dc", "http://purl.org/dc/elements/1.1/")    
+g.namespace_manager.bind("dct", "http://purl.org/dc/terms/")    
+g.namespace_manager.bind("dcty", "http://purl.org/dc/dcmitype/")    
+g.namespace_manager.bind("gndo", "http://d-nb.info/standards/elementset/gnd#")    
+g.namespace_manager.bind("schema", "http://schema.org/")
+g.namespace_manager.bind("sioc", "http://rdfs.org/sioc/ns#")    
+
+
 def G(S,P,O):
     global g
     g.add((S,P,O))
@@ -317,7 +332,7 @@ o.close()
 # range, domain, functional ou não
 for prop in props:
     if prop not in notFunctionalProperties_:
-        G(U(prop),rdf.type,owl.functionalProperty)
+        G(U(prop),rdf.type,owl.FunctionalProperty)
     ant,cons=P_[prop.split("/")[-1]]
     if len(cons) and ("XMLS" in cons[0]):
         G(U(prop), rdf.type, owl.DatatypeProperty)
@@ -669,19 +684,19 @@ ops = r.Namespace("http://purl.org/socialparticipation/ops/")
 sioc = r.Namespace("http://rdfs.org/sioc/ns#")
 xsd = r.namespace.XSD
 
-g.namespace_manager.bind("ops", "http://purl.org/socialparticipation/ops/")    
-g.namespace_manager.bind("rdf", r.namespace.RDF)    
-g.namespace_manager.bind("rdfs", r.namespace.RDFS)    
-g.namespace_manager.bind("foaf", r.namespace.FOAF)    
-g.namespace_manager.bind("xsd", r.namespace.XSD)    
-g.namespace_manager.bind("owl", r.namespace.OWL)    
-g.namespace_manager.bind("opa", "http://purl.org/socialparticipation/opa/")
-g.namespace_manager.bind("dc", "http://purl.org/dc/elements/1.1/")    
-g.namespace_manager.bind("dct", "http://purl.org/dc/terms/")    
-g.namespace_manager.bind("dcty", "http://purl.org/dc/dcmitype/")    
-g.namespace_manager.bind("gndo", "http://d-nb.info/standards/elementset/gnd#")    
-g.namespace_manager.bind("schema", "http://schema.org/")
-g.namespace_manager.bind("sioc", "http://rdfs.org/sioc/ns#")    
+#g.namespace_manager.bind("ops", "http://purl.org/socialparticipation/ops/")    
+#g.namespace_manager.bind("rdf", r.namespace.RDF)    
+#g.namespace_manager.bind("rdfs", r.namespace.RDFS)    
+#g.namespace_manager.bind("foaf", r.namespace.FOAF)    
+#g.namespace_manager.bind("xsd", r.namespace.XSD)    
+#g.namespace_manager.bind("owl", r.namespace.OWL)    
+#g.namespace_manager.bind("opa", "http://purl.org/socialparticipation/opa/")
+#g.namespace_manager.bind("dc", "http://purl.org/dc/elements/1.1/")    
+#g.namespace_manager.bind("dct", "http://purl.org/dc/terms/")    
+#g.namespace_manager.bind("dcty", "http://purl.org/dc/dcmitype/")    
+#g.namespace_manager.bind("gndo", "http://d-nb.info/standards/elementset/gnd#")    
+#g.namespace_manager.bind("schema", "http://schema.org/")
+#g.namespace_manager.bind("sioc", "http://rdfs.org/sioc/ns#")    
 
 #g.add((ocd.City,    rdfs.subClassOf, ))
 # enriquece figuras
