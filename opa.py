@@ -337,7 +337,10 @@ for prop in props:
         for cons_ in cons:
             G(B, owl.unionOf, U(opa+cons_))
     elif cons:
-        G(U(prop), rdfs.domain, U(opa+cons[0]))
+        if "XMLS" in cons[0]:
+            G(U(prop), rdfs.range, U(xsd+cons[0].split("#")[1]))
+        else:
+            G(U(prop), rdfs.range, U(opa+cons[0]))
 # restrições de classe
 C={}
 Ci={}
@@ -672,7 +675,7 @@ g.namespace_manager.bind("rdfs", r.namespace.RDFS)
 g.namespace_manager.bind("foaf", r.namespace.FOAF)    
 g.namespace_manager.bind("xsd", r.namespace.XSD)    
 g.namespace_manager.bind("owl", r.namespace.OWL)    
-g.namespace_manager.bind("ops", "http://purl.org/socialparticipation/ops/")
+g.namespace_manager.bind("opa", "http://purl.org/socialparticipation/opa/")
 g.namespace_manager.bind("dc", "http://purl.org/dc/elements/1.1/")    
 g.namespace_manager.bind("dct", "http://purl.org/dc/terms/")    
 g.namespace_manager.bind("dcty", "http://purl.org/dc/dcmitype/")    

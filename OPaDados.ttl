@@ -3,6 +3,7 @@
 @prefix dcty: <http://purl.org/dc/dcmitype/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix gndo: <http://d-nb.info/standards/elementset/gnd#> .
+@prefix opa: <http://purl.org/socialparticipation/opa/> .
 @prefix ops: <http://purl.org/socialparticipation/ops/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -12,355 +13,356 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://purl.org/socialparticipation/opa/OPaDados.owl> a owl:Ontology ;
+opa:OPaDados.owl a owl:Ontology ;
     dct:description "Ontologia do Participa.br, levantada com base nos dados e para conectar com outras instâncias" ;
     dct:title "Ontologia do Participa.br (OPa), parte dedicada aos dados do portal" ;
     owl:versionInfo "0.01a" .
 
-<http://purl.org/socialparticipation/opa/abstract> a owl:DatatypeProperty,
+opa:abstract a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain <http://purl.org/socialparticipation/opa/Article>,
-        <http://purl.org/socialparticipation/opa/XMLSchema#string> .
+    rdfs:domain opa:Article ;
+    rdfs:range xsd:string .
 
-<http://purl.org/socialparticipation/opa/based_near> a owl:ObjectProperty,
+opa:based_near a owl:ObjectProperty,
         owl:functionalProperty ;
-    rdfs:domain [ owl:unionOf <http://purl.org/socialparticipation/opa/Group>,
-                <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Participant> ],
-        <http://purl.org/socialparticipation/opa/Point> .
+    rdfs:domain [ owl:unionOf opa:Group,
+                opa:Member,
+                opa:Participant ] ;
+    rdfs:range opa:Point .
 
-<http://purl.org/socialparticipation/opa/city> a owl:DatatypeProperty,
+opa:city a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain [ owl:unionOf <http://purl.org/socialparticipation/opa/Group>,
-                <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Organization>,
-                <http://purl.org/socialparticipation/opa/Participant> ],
-        <http://purl.org/socialparticipation/opa/XMLSchema#string> .
+    rdfs:domain [ owl:unionOf opa:Group,
+                opa:Member,
+                opa:Organization,
+                opa:Participant ] ;
+    rdfs:range xsd:string .
 
-<http://purl.org/socialparticipation/opa/country> a owl:DatatypeProperty,
+opa:country a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain [ owl:unionOf <http://purl.org/socialparticipation/opa/Group>,
-                <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Organization>,
-                <http://purl.org/socialparticipation/opa/Participant> ],
-        <http://purl.org/socialparticipation/opa/XMLSchema#string> .
+    rdfs:domain [ owl:unionOf opa:Group,
+                opa:Member,
+                opa:Organization,
+                opa:Participant ] ;
+    rdfs:range xsd:string .
 
-<http://purl.org/socialparticipation/opa/hasReply> a owl:ObjectProperty ;
-    rdfs:domain [ owl:unionOf <http://purl.org/socialparticipation/opa/Article>,
-                <http://purl.org/socialparticipation/opa/Comment> ],
-        <http://purl.org/socialparticipation/opa/Comment> .
+opa:hasReply a owl:ObjectProperty ;
+    rdfs:domain [ owl:unionOf opa:Article,
+                opa:Comment ] ;
+    rdfs:range opa:Comment .
 
-<http://purl.org/socialparticipation/opa/hasStep> a owl:ObjectProperty ;
-    rdfs:domain <http://purl.org/socialparticipation/opa/Article> .
+opa:hasStep a owl:ObjectProperty ;
+    rdfs:domain opa:Article ;
+    rdfs:range opa:Article .
 
-<http://purl.org/socialparticipation/opa/ip> a owl:DatatypeProperty,
+opa:ip a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain <http://purl.org/socialparticipation/opa/Comment>,
-        <http://purl.org/socialparticipation/opa/XMLSchema#string> .
+    rdfs:domain opa:Comment ;
+    rdfs:range xsd:string .
 
-<http://purl.org/socialparticipation/opa/knows> a owl:ObjectProperty ;
-    rdfs:domain [ owl:unionOf <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Participant> ] ;
-    rdfs:range [ owl:unionOf <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Participant> ] .
+opa:knows a owl:ObjectProperty ;
+    rdfs:domain [ owl:unionOf opa:Member,
+                opa:Participant ] ;
+    rdfs:range [ owl:unionOf opa:Member,
+                opa:Participant ] .
 
-<http://purl.org/socialparticipation/opa/organization> a owl:DatatypeProperty ;
-    rdfs:domain [ owl:unionOf <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Participant> ],
-        <http://purl.org/socialparticipation/opa/XMLSchema#string> .
+opa:organization a owl:DatatypeProperty ;
+    rdfs:domain [ owl:unionOf opa:Member,
+                opa:Participant ] ;
+    rdfs:range xsd:string .
 
-<http://purl.org/socialparticipation/opa/professionalActivity> a owl:DatatypeProperty,
+opa:professionalActivity a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain [ owl:unionOf <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Participant> ],
-        <http://purl.org/socialparticipation/opa/XMLSchema#string> .
+    rdfs:domain [ owl:unionOf opa:Member,
+                opa:Participant ] ;
+    rdfs:range xsd:string .
 
-<http://purl.org/socialparticipation/opa/state> a owl:DatatypeProperty,
+opa:state a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain [ owl:unionOf <http://purl.org/socialparticipation/opa/Group>,
-                <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Organization>,
-                <http://purl.org/socialparticipation/opa/Participant> ],
-        <http://purl.org/socialparticipation/opa/XMLSchema#string> .
+    rdfs:domain [ owl:unionOf opa:Group,
+                opa:Member,
+                opa:Organization,
+                opa:Participant ] ;
+    rdfs:range xsd:string .
 
-<http://purl.org/socialparticipation/opa/title> a owl:DatatypeProperty,
+opa:title a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain [ owl:unionOf <http://purl.org/socialparticipation/opa/Article>,
-                <http://purl.org/socialparticipation/opa/Comment> ],
-        <http://purl.org/socialparticipation/opa/XMLSchema#string> .
+    rdfs:domain [ owl:unionOf opa:Article,
+                opa:Comment ] ;
+    rdfs:range xsd:string .
 
-<http://purl.org/socialparticipation/opa/voter> a owl:ObjectProperty,
+opa:voter a owl:ObjectProperty,
         owl:functionalProperty ;
-    rdfs:domain <http://purl.org/socialparticipation/opa/Vote> ;
-    rdfs:range [ owl:unionOf <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Participant> ] .
+    rdfs:domain opa:Vote ;
+    rdfs:range [ owl:unionOf opa:Member,
+                opa:Participant ] .
 
-<http://purl.org/socialparticipation/opa/Friendship> rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/member> ;
-            owl:someValuesFrom <http://purl.org/socialparticipation/opa/Member> ],
+opa:Friendship rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom opa:Member ;
+            owl:onProperty opa:member ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <http://purl.org/socialparticipation/opa/Member> ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/member> ] .
+            owl:onProperty opa:member ;
+            owl:someValuesFrom opa:Member ] .
 
-<http://purl.org/socialparticipation/opa/body> a owl:DatatypeProperty,
+opa:body a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain [ owl:unionOf <http://purl.org/socialparticipation/opa/Article>,
-                <http://purl.org/socialparticipation/opa/Comment> ],
-        <http://purl.org/socialparticipation/opa/XMLSchema#string> .
+    rdfs:domain [ owl:unionOf opa:Article,
+                opa:Comment ] ;
+    rdfs:range xsd:string .
 
-<http://purl.org/socialparticipation/opa/article> a owl:ObjectProperty,
+opa:article a owl:ObjectProperty,
         owl:functionalProperty ;
-    rdfs:domain <http://purl.org/socialparticipation/opa/Article>,
-        <http://purl.org/socialparticipation/opa/Tagging> .
+    rdfs:domain opa:Tagging ;
+    rdfs:range opa:Article .
 
-<http://purl.org/socialparticipation/opa/atype> a owl:DatatypeProperty,
+opa:atype a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain <http://purl.org/socialparticipation/opa/Article>,
-        <http://purl.org/socialparticipation/opa/XMLSchema#string> .
+    rdfs:domain opa:Article ;
+    rdfs:range xsd:string .
 
-<http://purl.org/socialparticipation/opa/creator> a owl:ObjectProperty,
+opa:creator a owl:ObjectProperty,
         owl:functionalProperty ;
-    rdfs:domain <http://purl.org/socialparticipation/opa/Comment> ;
-    rdfs:range [ owl:unionOf <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Participant> ] .
+    rdfs:domain opa:Comment ;
+    rdfs:range [ owl:unionOf opa:Member,
+                opa:Participant ] .
 
-<http://purl.org/socialparticipation/opa/lat> a owl:DatatypeProperty,
+opa:lat a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain <http://purl.org/socialparticipation/opa/Point>,
-        <http://purl.org/socialparticipation/opa/XMLSchema#float> .
+    rdfs:domain opa:Point ;
+    rdfs:range xsd:float .
 
-<http://purl.org/socialparticipation/opa/long> a owl:DatatypeProperty,
+opa:long a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain <http://purl.org/socialparticipation/opa/Point>,
-        <http://purl.org/socialparticipation/opa/XMLSchema#float> .
+    rdfs:domain opa:Point ;
+    rdfs:range xsd:float .
 
-<http://purl.org/socialparticipation/opa/mbox> a owl:DatatypeProperty,
+opa:mbox a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain [ owl:unionOf <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Participant> ],
-        <http://purl.org/socialparticipation/opa/XMLSchema#anyURI> .
+    rdfs:domain [ owl:unionOf opa:Member,
+                opa:Participant ] ;
+    rdfs:range xsd:anyURI .
 
-<http://purl.org/socialparticipation/opa/member> a owl:ObjectProperty ;
-    rdfs:domain <http://purl.org/socialparticipation/opa/Friendship> ;
-    rdfs:range [ owl:unionOf <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Participant> ] .
+opa:member a owl:ObjectProperty ;
+    rdfs:domain opa:Friendship ;
+    rdfs:range [ owl:unionOf opa:Member,
+                opa:Participant ] .
 
-<http://purl.org/socialparticipation/opa/polarity> a owl:DatatypeProperty,
+opa:polarity a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain <http://purl.org/socialparticipation/opa/Vote>,
-        <http://purl.org/socialparticipation/opa/XMLSchema#boolean> .
+    rdfs:domain opa:Vote ;
+    rdfs:range xsd:boolean .
 
-<http://purl.org/socialparticipation/opa/publisher> a owl:ObjectProperty,
+opa:publisher a owl:ObjectProperty,
         owl:functionalProperty ;
-    rdfs:domain <http://purl.org/socialparticipation/opa/Article> ;
-    rdfs:range [ owl:unionOf <http://purl.org/socialparticipation/opa/Group>,
-                <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Organization>,
-                <http://purl.org/socialparticipation/opa/Participant> ] .
+    rdfs:domain opa:Article ;
+    rdfs:range [ owl:unionOf opa:Group,
+                opa:Member,
+                opa:Organization,
+                opa:Participant ] .
 
-<http://purl.org/socialparticipation/opa/tag> a owl:ObjectProperty,
+opa:tag a owl:ObjectProperty,
         owl:functionalProperty ;
-    rdfs:domain <http://purl.org/socialparticipation/opa/Tag>,
-        <http://purl.org/socialparticipation/opa/Tagging> .
+    rdfs:domain opa:Tagging ;
+    rdfs:range opa:Tag .
 
-<http://purl.org/socialparticipation/opa/Point> rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/lat> ;
-            owl:someValuesFrom xsd:float ],
-        [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/long> ;
+opa:Point rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty opa:lat ;
             owl:someValuesFrom xsd:float ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:float ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/lat> ],
+            owl:onProperty opa:long ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:float ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/long> ] .
+            owl:onProperty opa:lat ],
+        [ a owl:Restriction ;
+            owl:onProperty opa:long ;
+            owl:someValuesFrom xsd:float ] .
 
-<http://purl.org/socialparticipation/opa/Tagging> rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <http://purl.org/socialparticipation/opa/Article> ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/article> ],
+opa:Tagging rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty opa:tag ;
+            owl:someValuesFrom opa:Tag ],
         [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/created> ;
-            owl:someValuesFrom xsd:dateTime ],
+            owl:allValuesFrom opa:Article ;
+            owl:onProperty opa:article ],
         [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/tag> ;
-            owl:someValuesFrom <http://purl.org/socialparticipation/opa/Tag> ],
+            owl:allValuesFrom opa:Tag ;
+            owl:onProperty opa:tag ],
         [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/article> ;
-            owl:someValuesFrom <http://purl.org/socialparticipation/opa/Article> ],
+            owl:onProperty opa:article ;
+            owl:someValuesFrom opa:Article ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <http://purl.org/socialparticipation/opa/Tag> ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/tag> ] .
-
-<http://purl.org/socialparticipation/opa/Vote> rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/polarity> ],
-        [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/polarity> ;
-            owl:someValuesFrom xsd:boolean ],
-        [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/created> ;
+            owl:onProperty opa:created ;
             owl:someValuesFrom xsd:dateTime ] .
 
-<http://purl.org/socialparticipation/opa/Tag> rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/name> ;
+opa:Vote rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty opa:created ;
+            owl:someValuesFrom xsd:dateTime ],
+        [ a owl:Restriction ;
+            owl:onProperty opa:polarity ;
+            owl:someValuesFrom xsd:boolean ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty opa:polarity ] .
+
+opa:Tag rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty opa:name ;
             owl:someValuesFrom xsd:string ] .
 
-<http://purl.org/socialparticipation/opa/modified> a owl:DatatypeProperty,
+opa:modified a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain [ owl:unionOf <http://purl.org/socialparticipation/opa/Article>,
-                <http://purl.org/socialparticipation/opa/Group>,
-                <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Organization>,
-                <http://purl.org/socialparticipation/opa/Participant> ],
-        <http://purl.org/socialparticipation/opa/XMLSchema#dateTime> .
+    rdfs:domain [ owl:unionOf opa:Article,
+                opa:Group,
+                opa:Member,
+                opa:Organization,
+                opa:Participant ] ;
+    rdfs:range xsd:dateTime .
 
-<http://purl.org/socialparticipation/opa/name> a owl:DatatypeProperty,
+opa:name a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain [ owl:unionOf <http://purl.org/socialparticipation/opa/Group>,
-                <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Organization>,
-                <http://purl.org/socialparticipation/opa/Participant>,
-                <http://purl.org/socialparticipation/opa/Tag> ],
-        <http://purl.org/socialparticipation/opa/XMLSchema#string> .
+    rdfs:domain [ owl:unionOf opa:Group,
+                opa:Member,
+                opa:Organization,
+                opa:Participant,
+                opa:Tag ] ;
+    rdfs:range xsd:string .
 
-<http://purl.org/socialparticipation/opa/publicProfile> a owl:DatatypeProperty,
+opa:publicProfile a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain [ owl:unionOf <http://purl.org/socialparticipation/opa/Group>,
-                <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Organization>,
-                <http://purl.org/socialparticipation/opa/Participant> ],
-        <http://purl.org/socialparticipation/opa/XMLSchema#boolean> .
+    rdfs:domain [ owl:unionOf opa:Group,
+                opa:Member,
+                opa:Organization,
+                opa:Participant ] ;
+    rdfs:range xsd:boolean .
 
-<http://purl.org/socialparticipation/opa/visibleProfile> a owl:DatatypeProperty,
+opa:visibleProfile a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain [ owl:unionOf <http://purl.org/socialparticipation/opa/Group>,
-                <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Organization>,
-                <http://purl.org/socialparticipation/opa/Participant> ],
-        <http://purl.org/socialparticipation/opa/XMLSchema#boolean> .
+    rdfs:domain [ owl:unionOf opa:Group,
+                opa:Member,
+                opa:Organization,
+                opa:Participant ] ;
+    rdfs:range xsd:boolean .
 
-<http://purl.org/socialparticipation/opa/Comment> rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/body> ;
+opa:Comment rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty opa:created ;
+            owl:someValuesFrom xsd:dateTime ],
+        [ a owl:Restriction ;
+            owl:onProperty opa:body ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/creator> ;
-            owl:someValuesFrom <http://purl.org/socialparticipation/opa/Member> ],
+            owl:onProperty opa:creator ;
+            owl:someValuesFrom opa:Member ],
         [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/created> ;
-            owl:someValuesFrom xsd:dateTime ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <http://purl.org/socialparticipation/opa/Member> ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/creator> ] .
+            owl:allValuesFrom opa:Member ;
+            owl:onProperty opa:creator ] .
 
-<http://purl.org/socialparticipation/opa/created> a owl:DatatypeProperty,
+opa:created a owl:DatatypeProperty,
         owl:functionalProperty ;
-    rdfs:domain [ owl:unionOf <http://purl.org/socialparticipation/opa/Article>,
-                <http://purl.org/socialparticipation/opa/Comment>,
-                <http://purl.org/socialparticipation/opa/Group>,
-                <http://purl.org/socialparticipation/opa/Member>,
-                <http://purl.org/socialparticipation/opa/Organization>,
-                <http://purl.org/socialparticipation/opa/Participant>,
-                <http://purl.org/socialparticipation/opa/Tagging>,
-                <http://purl.org/socialparticipation/opa/Vote> ],
-        <http://purl.org/socialparticipation/opa/XMLSchema#dateTime> .
+    rdfs:domain [ owl:unionOf opa:Article,
+                opa:Comment,
+                opa:Group,
+                opa:Member,
+                opa:Organization,
+                opa:Participant,
+                opa:Tagging,
+                opa:Vote ] ;
+    rdfs:range xsd:dateTime .
 
-<http://purl.org/socialparticipation/opa/Organization> rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/created> ;
-            owl:someValuesFrom xsd:dateTime ],
-        [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/modified> ;
-            owl:someValuesFrom xsd:dateTime ],
-        [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/publicProfile> ;
-            owl:someValuesFrom xsd:boolean ],
-        [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/name> ;
+opa:Organization rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty opa:name ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/visibleProfile> ;
-            owl:someValuesFrom xsd:boolean ] .
-
-<http://purl.org/socialparticipation/opa/Group> rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/created> ;
+            owl:onProperty opa:visibleProfile ;
+            owl:someValuesFrom xsd:boolean ],
+        [ a owl:Restriction ;
+            owl:onProperty opa:modified ;
             owl:someValuesFrom xsd:dateTime ],
         [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/publicProfile> ;
+            owl:onProperty opa:publicProfile ;
             owl:someValuesFrom xsd:boolean ],
         [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/visibleProfile> ;
-            owl:someValuesFrom xsd:boolean ],
-        [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/name> ;
-            owl:someValuesFrom xsd:string ],
-        [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/modified> ;
+            owl:onProperty opa:created ;
             owl:someValuesFrom xsd:dateTime ] .
 
-<http://purl.org/socialparticipation/opa/Article> rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/publisher> ;
-            owl:someValuesFrom <http://purl.org/socialparticipation/opa/Member> ],
-        [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/created> ;
+opa:Group rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty opa:modified ;
             owl:someValuesFrom xsd:dateTime ],
         [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/modified> ;
+            owl:onProperty opa:created ;
+            owl:someValuesFrom xsd:dateTime ],
+        [ a owl:Restriction ;
+            owl:onProperty opa:name ;
+            owl:someValuesFrom xsd:string ],
+        [ a owl:Restriction ;
+            owl:onProperty opa:visibleProfile ;
+            owl:someValuesFrom xsd:boolean ],
+        [ a owl:Restriction ;
+            owl:onProperty opa:publicProfile ;
+            owl:someValuesFrom xsd:boolean ] .
+
+opa:Article rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty opa:modified ;
+            owl:someValuesFrom xsd:dateTime ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty opa:atype ],
+        [ a owl:Restriction ;
+            owl:onProperty opa:created ;
+            owl:someValuesFrom xsd:dateTime ],
+        [ a owl:Restriction ;
+            owl:onProperty dct:issued ;
             owl:someValuesFrom xsd:dateTime ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
             owl:onProperty dct:issued ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/atype> ],
+            owl:allValuesFrom opa:Member ;
+            owl:onProperty opa:publisher ],
         [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/atype> ;
+            owl:onProperty opa:atype ;
             owl:someValuesFrom xsd:string ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <http://purl.org/socialparticipation/opa/Member> ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/publisher> ],
-        [ a owl:Restriction ;
-            owl:onProperty dct:issued ;
-            owl:someValuesFrom xsd:dateTime ] .
+            owl:onProperty opa:publisher ;
+            owl:someValuesFrom opa:Member ] .
 
-<http://purl.org/socialparticipation/opa/Participant> rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/publicProfile> ;
-            owl:someValuesFrom xsd:boolean ],
-        [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/mbox> ],
-        [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/mbox> ],
-        [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/visibleProfile> ;
-            owl:someValuesFrom xsd:boolean ],
-        [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/created> ;
+opa:Participant rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty opa:modified ;
             owl:someValuesFrom xsd:dateTime ],
         [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/name> ;
-            owl:someValuesFrom xsd:string ],
+            owl:onProperty opa:mbox ],
         [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/modified> ;
-            owl:someValuesFrom xsd:dateTime ] .
-
-<http://purl.org/socialparticipation/opa/Member> rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/name> ;
-            owl:someValuesFrom xsd:string ],
+            owl:onProperty opa:mbox ],
         [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/modified> ;
+            owl:onProperty opa:created ;
             owl:someValuesFrom xsd:dateTime ],
         [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/visibleProfile> ;
+            owl:onProperty opa:publicProfile ;
             owl:someValuesFrom xsd:boolean ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/publicProfile> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:boolean ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/visibleProfile> ],
-        [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/publicProfile> ;
+            owl:onProperty opa:visibleProfile ;
             owl:someValuesFrom xsd:boolean ],
         [ a owl:Restriction ;
-            owl:onProperty <http://purl.org/socialparticipation/opa/created> ;
-            owl:someValuesFrom xsd:dateTime ] .
+            owl:onProperty opa:name ;
+            owl:someValuesFrom xsd:string ] .
+
+opa:Member rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty opa:publicProfile ],
+        [ a owl:Restriction ;
+            owl:onProperty opa:publicProfile ;
+            owl:someValuesFrom xsd:boolean ],
+        [ a owl:Restriction ;
+            owl:onProperty opa:visibleProfile ;
+            owl:someValuesFrom xsd:boolean ],
+        [ a owl:Restriction ;
+            owl:onProperty opa:modified ;
+            owl:someValuesFrom xsd:dateTime ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:boolean ;
+            owl:onProperty opa:visibleProfile ],
+        [ a owl:Restriction ;
+            owl:onProperty opa:created ;
+            owl:someValuesFrom xsd:dateTime ],
+        [ a owl:Restriction ;
+            owl:onProperty opa:name ;
+            owl:someValuesFrom xsd:string ] .
 
