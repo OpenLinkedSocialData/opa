@@ -142,8 +142,11 @@ def QF(mstr):
     return fr[FRN.index(mstr)]
 ############## INÍCIO DA TRIPLIFICAÇÃO
 ### Rotina de triplificação dos perfis, artigos e comentários
-G(U(part),rdf.type,opa.ParticipationPortal)
+uri=opa.ParticipationPortal+"#"+participabr
+G(uri,rdf.type,opa.ParticipationPortal)
 # adicionar mais info sobre o participa aqui (propósito, órgãos vinculados, etc)
+# adicionar estruturas básicas topológicas (redes de interação e de amizade) e textuais (bag of words geral e de cada participante (e comunidade, artigo, comentário, etc)
+
 
 for pp in profiles:
     ### tabela profiles
@@ -293,6 +296,9 @@ for tt in taggings:
     art=opa.Article+"#"+str(tt[2])
     G(tfr,opa.article,art)
     G(tfr,opa.created,L(tt[4],xsd.dateTime))
+
+
+
 
 f=open("participaTriplestore.rdf","wb")
 f.write(g.serialize())
