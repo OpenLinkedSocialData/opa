@@ -5,509 +5,311 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Article">
-    <rdfs:subClassOf rdf:nodeID="Nfc3b7ec0be034cf69e9dd4c42ab06283"/>
-    <rdfs:subClassOf rdf:nodeID="Nfce5c9378c1a443591cc88b1a8f9af70"/>
-    <rdfs:subClassOf rdf:nodeID="N2a6ed935f133423ca11eb4da48d3a262"/>
-    <rdfs:subClassOf rdf:nodeID="N581d89fbf5a34c07bac464848a50440c"/>
-    <rdfs:subClassOf rdf:nodeID="N03246fb73ca0465a95069bdfa9bdcc30"/>
-    <rdfs:subClassOf rdf:nodeID="Nbf7377c095304e9a87a6cc956656c280"/>
-    <rdfs:subClassOf rdf:nodeID="N775017e9f1e94d1497644c62597ccfe8"/>
-    <rdfs:subClassOf rdf:nodeID="N6bfd4016066543ecbafea96b12de533e"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N88360cffae32417a911734ee82712c3a">
-    <owl:someValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/article"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/country">
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/modified">
+    <rdfs:domain rdf:nodeID="N6352fc409bd64793ac1c07ef93f30c36"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:nodeID="N2dd5d5bbf6ce4443ac6309cc2516d77b"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Participant">
-    <rdfs:subClassOf rdf:nodeID="N9b460657ea494f4fb3bff4fb0b3ad384"/>
-    <rdfs:subClassOf rdf:nodeID="Ncf9e6fa4da194ecbbdf4b5afe681a794"/>
-    <rdfs:subClassOf rdf:nodeID="Nd3d6ba06a849492883e4fbd86eb556b2"/>
-    <rdfs:subClassOf rdf:nodeID="Na676b2329ccc442887297a531899cd88"/>
-    <rdfs:subClassOf rdf:nodeID="N97031447545f4a4b9e166232ac716c45"/>
-    <rdfs:subClassOf rdf:nodeID="N61b06d55da624428afadaff554ceb217"/>
-    <rdfs:subClassOf rdf:nodeID="Nab9e45f8f6a248a2bc4b97ecd5bef954"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N9b460657ea494f4fb3bff4fb0b3ad384">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/visibleProfile"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Member">
-    <rdfs:subClassOf rdf:nodeID="Nfaae3bd8a91e46b3ae1a9b2c48a48bff"/>
-    <rdfs:subClassOf rdf:nodeID="Nf3b89308ef6347e9b4320c4badeb8ae1"/>
-    <rdfs:subClassOf rdf:nodeID="N07a07896f2864c3cb58a57eb5dc25bec"/>
-    <rdfs:subClassOf rdf:nodeID="N71dbf16229c44aec8a57c87e70ff451e"/>
-    <rdfs:subClassOf rdf:nodeID="N994a26e96b414226aebbb00b2fb6bba6"/>
-    <rdfs:subClassOf rdf:nodeID="Nc48c2d40cf4f4a28ba27dd6d79e7b741"/>
-    <rdfs:subClassOf rdf:nodeID="N1a3fe3d77afd4e3ba1ee163551d7fb20"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/creator">
-    <rdfs:range rdf:nodeID="Nc00c8fca5924491c81f55d2d5217f711"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Comment"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/state">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:nodeID="N5f19226b34ac42838e5598d323c0d1ba"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/publicProfile">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:domain rdf:nodeID="N8f6ec54b670c4cfc9cfaddfaead333d5"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N775017e9f1e94d1497644c62597ccfe8">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/created"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc00c8fca5924491c81f55d2d5217f711">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/organization">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:nodeID="N59488ddb2f654811abe81f49af33256f"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/title">
-    <rdfs:domain rdf:nodeID="Nfb9eba3533d14a56a78e6875b1f8d8ce"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfb9eba3533d14a56a78e6875b1f8d8ce">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Comment"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/atype">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:nodeID="Nc62e3db5fc46433080e1d995eee89601"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Tagging">
-    <rdfs:subClassOf rdf:nodeID="Ncad83c208dd841cba22a627b3a60281c"/>
-    <rdfs:subClassOf rdf:nodeID="Ndd0fc507968243c895f9c88bf0381386"/>
-    <rdfs:subClassOf rdf:nodeID="Nf4d32ac68d64419e97d12fea25b48010"/>
-    <rdfs:subClassOf rdf:nodeID="Nb4f2ec8338ab41e58fdc9530d3bdcdbb"/>
-    <rdfs:subClassOf rdf:nodeID="N88360cffae32417a911734ee82712c3a"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N41013535b41b4bf59ace7e2e7891c201">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/lat"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N48a90ace36cf42738ce2a37f2c9e11f4">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/created"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nec295a859422457e838da506406145f5">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/creator"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7df713064fc54668906a23959d10af23">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/modified"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ndd6ca58d86f64129a54271d509752183">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Comment"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N3fdf832f8e774560aa739a8a3f507c05">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/visibleProfile"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8f6ec54b670c4cfc9cfaddfaead333d5">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/based_near">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:range rdf:resource="http://purl.org/socialparticipation/opa/Point"/>
-    <rdfs:domain rdf:nodeID="N2ff293aa9f444e9f9e000a5db2bc346a"/>
+    <rdfs:domain rdf:nodeID="N37b4682dc102423eb9d0b719826c792a"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/visibleProfile">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:domain rdf:nodeID="N82b822aa0618496ea450c3e0dd30e7e9"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc48c2d40cf4f4a28ba27dd6d79e7b741">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/visibleProfile"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc8ccb680ace144abafdef4f187e8ba6b">
-    <owl:someValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/creator"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb82f8f8294ef441fb2ae0f33eb77ea2d">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Comment"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Vote"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Tagging"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6f07c079f3bb4815ac22a33b63531075">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/name"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/created">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdfs:domain rdf:nodeID="Nb82f8f8294ef441fb2ae0f33eb77ea2d"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/modified">
-    <rdfs:domain rdf:nodeID="N7294139e5be942e69e30626acbcb796a"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6bfd4016066543ecbafea96b12de533e">
-    <owl:someValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/publisher"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ndd0fc507968243c895f9c88bf0381386">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/created"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfbcc7068858444beadb9c701dd356bb3">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/created"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N90446fd89a504a56b097fed5a9e0b00e">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/modified"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2a6ed935f133423ca11eb4da48d3a262">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/atype"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Organization">
-    <rdfs:subClassOf rdf:nodeID="N5226cc294a2f4ec183bffa1bad16b398"/>
-    <rdfs:subClassOf rdf:nodeID="N7df713064fc54668906a23959d10af23"/>
-    <rdfs:subClassOf rdf:nodeID="Ne5bcbc90930d4e5880b1d1472da09d78"/>
-    <rdfs:subClassOf rdf:nodeID="N03fb47e1f7f24d6d829b7eb1621ce54d"/>
-    <rdfs:subClassOf rdf:nodeID="N3fdf832f8e774560aa739a8a3f507c05"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Vote">
-    <rdfs:subClassOf rdf:nodeID="N30fd330083304f6e94df8e3357126bbf"/>
-    <rdfs:subClassOf rdf:nodeID="N76d4a9689f94450c8c27e29376700d46"/>
-    <rdfs:subClassOf rdf:nodeID="N48a90ace36cf42738ce2a37f2c9e11f4"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N97031447545f4a4b9e166232ac716c45">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/created"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Group">
-    <rdfs:subClassOf rdf:nodeID="N596d9c1216b644a4a8afcc6a607be472"/>
-    <rdfs:subClassOf rdf:nodeID="N6037104878744231aedf26b988c493ce"/>
-    <rdfs:subClassOf rdf:nodeID="Nfbcc7068858444beadb9c701dd356bb3"/>
-    <rdfs:subClassOf rdf:nodeID="N90446fd89a504a56b097fed5a9e0b00e"/>
-    <rdfs:subClassOf rdf:nodeID="N6f07c079f3bb4815ac22a33b63531075"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N581d89fbf5a34c07bac464848a50440c">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/publisher"/>
-    <owl:allValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5f19226b34ac42838e5598d323c0d1ba">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/ip">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Comment"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/knows">
-    <rdfs:domain rdf:nodeID="N587712683e9948b791413adc870f1dc0"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:range rdf:nodeID="N67b6f3963b4c4e69b169d5986ecf2d68"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/polarity">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Vote"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfaae3bd8a91e46b3ae1a9b2c48a48bff">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="N88b6b7ef76724ed3984e0d4b8de4e9bb">
     <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/publicProfile"/>
     <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbf7377c095304e9a87a6cc956656c280">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/issued"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/voter">
-    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Vote"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:range rdf:nodeID="Nc1cf6286f5c949308bbd879d09507585"/>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/published">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N67b6f3963b4c4e69b169d5986ecf2d68">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+  <rdf:Description rdf:nodeID="Nf89c388560ed463893797c0754663b1f">
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/published"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Point">
-    <rdfs:subClassOf rdf:nodeID="Ne21594ab5fd74a82bbe81d7d3ffd18d5"/>
-    <rdfs:subClassOf rdf:nodeID="N41013535b41b4bf59ace7e2e7891c201"/>
-    <rdfs:subClassOf rdf:nodeID="Ne40498ef723e4fe486aa74179ced72f5"/>
-    <rdfs:subClassOf rdf:nodeID="N9733dfc5181645d39f3a029468d49f0c"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc1cf6286f5c949308bbd879d09507585">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2dd5d5bbf6ce4443ac6309cc2516d77b">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+  <rdf:Description rdf:nodeID="N37c28c41fe7e43ffb43a80cc6d2e1f03">
     <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Comment"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Tagging"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
     <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Vote"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/body">
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/OPaDados.owl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionInfo>0.01a</owl:versionInfo>
+    <dct:title>Ontologia do Participa.br (OPa), parte dedicada aos dados do portal</dct:title>
+    <dct:description>Ontologia do Participa.br, levantada com base nos dados e para conectar com outras instâncias</dct:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/visibleProfile">
+    <rdfs:domain rdf:nodeID="N72326e800699406a8e8123d282845174"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:nodeID="Nc3f13b59c47147de9f90295f7f12897a"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/publisher">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
-    <rdfs:range rdf:nodeID="N6a6f74865f594518955344c79b9e545a"/>
+  <rdf:Description rdf:nodeID="N72326e800699406a8e8123d282845174">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/name">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:nodeID="N7d3c259cbbea4af3b889b22e1565d66f"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:nodeID="Ne013bd85378e4960b233614a21d59048"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N07a07896f2864c3cb58a57eb5dc25bec">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/created"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne21594ab5fd74a82bbe81d7d3ffd18d5">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  <rdf:Description rdf:nodeID="N08020c652e80482eafae58a4edad7c71">
     <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/lat"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/hasStep">
-    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
-    <rdfs:range rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb8e14f1f49a048d58440cccba0e9a1c3">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdf:Description rdf:nodeID="Na318e95862d4467b83ae89752218179d">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/body"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/publicProfile"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Na676b2329ccc442887297a531899cd88">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/mbox"/>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/state">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:nodeID="N48f459c4090a4f5fa72e131fac5e2540"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Naa2fb458b7b4488188b9703fb76c9b81">
+  <rdf:Description rdf:nodeID="N5eff3d0aeba24f8db9c8605ee7526659">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/creator"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8ad9ac58585b4791802e10484eb92b7f">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/created"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Member">
+    <rdfs:subClassOf rdf:nodeID="N724873e1f0994d0daa17877884c7e540"/>
+    <rdfs:subClassOf rdf:nodeID="N88b6b7ef76724ed3984e0d4b8de4e9bb"/>
+    <rdfs:subClassOf rdf:nodeID="N8ad9ac58585b4791802e10484eb92b7f"/>
+    <rdfs:subClassOf rdf:nodeID="Nfe749ada8bdc4cdf946cda371eb9be51"/>
+    <rdfs:subClassOf rdf:nodeID="N7878c40dede1493a8576e1bf875b996f"/>
+    <rdfs:subClassOf rdf:nodeID="Ne99f13c4fb6d480bbddbb47b3da5c64c"/>
+    <rdfs:subClassOf rdf:nodeID="Nec1eeb4c59864efaaaafd2badbd0cae1"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6ac8c7ca7bd34083a5cf207945fcb279">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/article"/>
+    <owl:allValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/city">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:nodeID="N25fba143c8d146ffacd79fb6f54eb470"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na8eb312138f04476a20f20931c77595c">
     <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/member"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0ace62bb77a74735a10f58d05a426b5b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/long"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N35f0cf8c55664b378e25e39c03400906">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/created"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc9679c949b35406a978c681a8e2cd304">
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/publisher"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:someValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1c2efb63f31a4312b8ef447a699df889">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/created"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N03fb47e1f7f24d6d829b7eb1621ce54d">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/publicProfile"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne013bd85378e4960b233614a21d59048">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Tag"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/OPaDados.owl">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <dct:description>Ontologia do Participa.br, levantada com base nos dados e para conectar com outras instâncias</dct:description>
-    <dct:title>Ontologia do Participa.br (OPa), parte dedicada aos dados do portal</dct:title>
-    <owl:versionInfo>0.01a</owl:versionInfo>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N7294139e5be942e69e30626acbcb796a">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/professionalActivity">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:nodeID="Nd36c830ae2bc495684dabcda2888bba0"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N596d9c1216b644a4a8afcc6a607be472">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/visibleProfile"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/abstract">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6037104878744231aedf26b988c493ce">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/publicProfile"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf3b89308ef6347e9b4320c4badeb8ae1">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/visibleProfile"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/tag">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Tagging"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:range rdf:resource="http://purl.org/socialparticipation/opa/Tag"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N449c4e8803294e3885c902279074cfe4">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N82b822aa0618496ea450c3e0dd30e7e9">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5226cc294a2f4ec183bffa1bad16b398">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/created"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N59488ddb2f654811abe81f49af33256f">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/lat">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Point"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne5bcbc90930d4e5880b1d1472da09d78">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/name"/>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Organization">
+    <rdfs:subClassOf rdf:nodeID="Ne41df8df189242ef95f72c43fa178af1"/>
+    <rdfs:subClassOf rdf:nodeID="N95b4bdd3e35048f79c428628ad8b24e8"/>
+    <rdfs:subClassOf rdf:nodeID="Ne90aec5765234528a68145e2eb40de10"/>
+    <rdfs:subClassOf rdf:nodeID="Ncc883e79901a4bd6a17e199aff1b3825"/>
+    <rdfs:subClassOf rdf:nodeID="N5a1790e8ff6f469eb8b45d7e6fad82d0"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N354c6bc34148449e927fe332139dbf35">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/publicProfile"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N13c0c84c99e74bf6807f576d610b4866">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/created"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/polarity">
+    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Vote"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nac49d7149caf4e81893123031ccfdedc">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/country">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:nodeID="Nac49d7149caf4e81893123031ccfdedc"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb823502492fd469f9a5eb586f3023537">
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/mbox"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Tagging">
+    <rdfs:subClassOf rdf:nodeID="Nd12d375ee7dc45bf90373e673280d532"/>
+    <rdfs:subClassOf rdf:nodeID="Nc9156e088908416c8738bc00ea4be8b2"/>
+    <rdfs:subClassOf rdf:nodeID="N13c0c84c99e74bf6807f576d610b4866"/>
+    <rdfs:subClassOf rdf:nodeID="N6ac8c7ca7bd34083a5cf207945fcb279"/>
+    <rdfs:subClassOf rdf:nodeID="N7d39c5a6c9ef489d9a056e271fdbe9ab"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/publicProfile">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:nodeID="N134a16b5a17f4f7ba14bad8fd3a6890a"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/created">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:nodeID="N37c28c41fe7e43ffb43a80cc6d2e1f03"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/mbox">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:nodeID="Na4efe0bc61e24021bab4c5a8f3133507"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/abstract">
+    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/knows">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:nodeID="N8b2cc356d72b4d679ae7595e12dcc2b8"/>
+    <rdfs:domain rdf:nodeID="N2d503f27253f4d6f8237594b724c0bb7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Participant">
+    <rdfs:subClassOf rdf:nodeID="Nb823502492fd469f9a5eb586f3023537"/>
+    <rdfs:subClassOf rdf:nodeID="Na318e95862d4467b83ae89752218179d"/>
+    <rdfs:subClassOf rdf:nodeID="N4ea4767a8b8649f8a6b749125869bced"/>
+    <rdfs:subClassOf rdf:nodeID="Nb399857f49294082be506adf504c99b1"/>
+    <rdfs:subClassOf rdf:nodeID="N5166b8956afa49bbaf4970a645d0d103"/>
+    <rdfs:subClassOf rdf:nodeID="N35f0cf8c55664b378e25e39c03400906"/>
+    <rdfs:subClassOf rdf:nodeID="Ncaf8a01b5d064211a3f2ff17c536f7f5"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/body">
+    <rdfs:domain rdf:nodeID="N3c56bc5044354eada65465ce8bb01ed2"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne41df8df189242ef95f72c43fa178af1">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/created"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N51e19076df2743aeb89667aa68f7eb4f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/long"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncc883e79901a4bd6a17e199aff1b3825">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/publicProfile"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nef63a6ea5ef34f7faf9ca76f33ab36d0">
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/atype"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nec1eeb4c59864efaaaafd2badbd0cae1">
     <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4ea4767a8b8649f8a6b749125869bced">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/visibleProfile"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/long">
-    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Point"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Point"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/mbox">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:nodeID="N449c4e8803294e3885c902279074cfe4"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2ff293aa9f444e9f9e000a5db2bc346a">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne40498ef723e4fe486aa74179ced72f5">
+  <rdf:Description rdf:nodeID="N54617b27a78446fa8e2bd5e0bcfbcd85">
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/atype"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/long"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nab9e45f8f6a248a2bc4b97ecd5bef954">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/mbox"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N76d4a9689f94450c8c27e29376700d46">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/polarity"/>
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N71dbf16229c44aec8a57c87e70ff451e">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/publicProfile"/>
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd3d6ba06a849492883e4fbd86eb556b2">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/name"/>
     <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Comment">
-    <rdfs:subClassOf rdf:nodeID="Nec295a859422457e838da506406145f5"/>
-    <rdfs:subClassOf rdf:nodeID="Nb8e14f1f49a048d58440cccba0e9a1c3"/>
-    <rdfs:subClassOf rdf:nodeID="Nc8ccb680ace144abafdef4f187e8ba6b"/>
-    <rdfs:subClassOf rdf:nodeID="N1c2efb63f31a4312b8ef447a699df889"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1a3fe3d77afd4e3ba1ee163551d7fb20">
+  <rdf:Description rdf:nodeID="Ne99f13c4fb6d480bbddbb47b3da5c64c">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/modified"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndc287a1032c941af806b679fed40fa7f">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/lat"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd09b7cb7027048a79579cee0c0f44651">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/polarity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb399857f49294082be506adf504c99b1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/modified"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncad83c208dd841cba22a627b3a60281c">
+  <rdf:Description rdf:nodeID="N3fbbe5ba316241f895e2227013ff8c16">
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/polarity"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Tag"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/tag"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N9733dfc5181645d39f3a029468d49f0c">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/long"/>
+  <rdf:Description rdf:nodeID="N63ad10e7c0c54868868890ac5ea78883">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/name"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/city">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdfs:domain rdf:nodeID="N8a030040c3ea4ecd8cb39e4bba6d6477"/>
+  <rdf:Description rdf:nodeID="N5a1790e8ff6f469eb8b45d7e6fad82d0">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/modified"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/article">
     <rdfs:range rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
@@ -515,104 +317,308 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Tagging"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfce5c9378c1a443591cc88b1a8f9af70">
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://purl.org/dc/terms/issued"/>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/tag">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://purl.org/socialparticipation/opa/Tag"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Tagging"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Friendship">
-    <rdfs:subClassOf rdf:nodeID="N5dc99728838b421b88e2a443d95e353f"/>
-    <rdfs:subClassOf rdf:nodeID="Naa2fb458b7b4488188b9703fb76c9b81"/>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/organization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:nodeID="N9084cd7ca78c440e86e9b50ff09ff717"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Tag">
-    <rdfs:subClassOf rdf:nodeID="Nb59707a690254ccf91d3889e135656b1"/>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Article">
+    <rdfs:subClassOf rdf:nodeID="N5ae28c37976945babececaa58fb9912e"/>
+    <rdfs:subClassOf rdf:nodeID="Naa65fa3697e64be8b0e60e2d37df14e1"/>
+    <rdfs:subClassOf rdf:nodeID="Nb1f4b018793a458ebe17144aeb0796f3"/>
+    <rdfs:subClassOf rdf:nodeID="Nf89c388560ed463893797c0754663b1f"/>
+    <rdfs:subClassOf rdf:nodeID="Nef63a6ea5ef34f7faf9ca76f33ab36d0"/>
+    <rdfs:subClassOf rdf:nodeID="Nc9679c949b35406a978c681a8e2cd304"/>
+    <rdfs:subClassOf rdf:nodeID="N6c030d7600ab46c88ff3a9cc10f6ffbc"/>
+    <rdfs:subClassOf rdf:nodeID="N54617b27a78446fa8e2bd5e0bcfbcd85"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nfc3b7ec0be034cf69e9dd4c42ab06283">
+  <rdf:Description rdf:nodeID="N9a1e6b12b7cb460d85b8903d4e04fa0f">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5d056ea719c242f3a2b83d78da715333">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/modified"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncf9e6fa4da194ecbbdf4b5afe681a794">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/publicProfile"/>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/hasReply">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="Nfb3ad256588f436c9950c63e0d36f21b"/>
+    <rdfs:range rdf:resource="http://purl.org/socialparticipation/opa/Comment"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc2cbb64a25e6470e83ee186d9cb361c4">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/atype">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ncaf8a01b5d064211a3f2ff17c536f7f5">
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/mbox"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5a0c54c6d13c41d99724644121078365">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/created"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N25fba143c8d146ffacd79fb6f54eb470">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1575c9e31e8a483e9755871eff2285ff">
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfde8ca9162bf45ce9cc5c36c08d3ec97">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/visibleProfile"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/ip">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Comment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N48f459c4090a4f5fa72e131fac5e2540">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfe749ada8bdc4cdf946cda371eb9be51">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/visibleProfile"/>
     <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf992bb9c3c1146f7b80bf3fe691288eb">
+  <rdf:Description rdf:nodeID="N5ae28c37976945babececaa58fb9912e">
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/publisher"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc079409934bd450bbbe52461bffd152e">
     <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
     <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb4f2ec8338ab41e58fdc9530d3bdcdbb">
+  <rdf:Description rdf:nodeID="Na4efe0bc61e24021bab4c5a8f3133507">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0358353f6ee74f8883f2940ce2f0f15c">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7d3c259cbbea4af3b889b22e1565d66f">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Tag"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N724873e1f0994d0daa17877884c7e540">
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/publicProfile"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6352fc409bd64793ac1c07ef93f30c36">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/publisher">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:nodeID="Nc2cbb64a25e6470e83ee186d9cb361c4"/>
+    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N34589b13532745e09d16c991fa74d4da">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8b2cc356d72b4d679ae7595e12dcc2b8">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N95b4bdd3e35048f79c428628ad8b24e8">
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/name"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7878c40dede1493a8576e1bf875b996f">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/visibleProfile"/>
+    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/creator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:nodeID="N0358353f6ee74f8883f2940ce2f0f15c"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Comment"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfb3ad256588f436c9950c63e0d36f21b">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Comment"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Naa65fa3697e64be8b0e60e2d37df14e1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/created"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7d39c5a6c9ef489d9a056e271fdbe9ab">
+    <owl:someValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/article"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/member">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Friendship"/>
+    <rdfs:range rdf:nodeID="N9a1e6b12b7cb460d85b8903d4e04fa0f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Friendship">
+    <rdfs:subClassOf rdf:nodeID="Na8eb312138f04476a20f20931c77595c"/>
+    <rdfs:subClassOf rdf:nodeID="N087e41d1234a4677bf8989e26e5319b9"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/voter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Vote"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:nodeID="N34589b13532745e09d16c991fa74d4da"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N134a16b5a17f4f7ba14bad8fd3a6890a">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6c030d7600ab46c88ff3a9cc10f6ffbc">
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/modified"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb1f4b018793a458ebe17144aeb0796f3">
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/published"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Group">
+    <rdfs:subClassOf rdf:nodeID="N354c6bc34148449e927fe332139dbf35"/>
+    <rdfs:subClassOf rdf:nodeID="N5a0c54c6d13c41d99724644121078365"/>
+    <rdfs:subClassOf rdf:nodeID="N1575c9e31e8a483e9755871eff2285ff"/>
+    <rdfs:subClassOf rdf:nodeID="Nfde8ca9162bf45ce9cc5c36c08d3ec97"/>
+    <rdfs:subClassOf rdf:nodeID="N5d056ea719c242f3a2b83d78da715333"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc9156e088908416c8738bc00ea4be8b2">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:someValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Tag"/>
     <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/tag"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N587712683e9948b791413adc870f1dc0">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Comment">
+    <rdfs:subClassOf rdf:nodeID="N5eff3d0aeba24f8db9c8605ee7526659"/>
+    <rdfs:subClassOf rdf:nodeID="Nb8327ac9405f434881785bf1bf90a55b"/>
+    <rdfs:subClassOf rdf:nodeID="Ne9f108693fd344d89d7781e0b602c87f"/>
+    <rdfs:subClassOf rdf:nodeID="Na594d16bbdb04b7091ad013840ccfad4"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf4d32ac68d64419e97d12fea25b48010">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/article"/>
+  <rdf:Description rdf:nodeID="Ndb59c8a37e0c4fb28aa697121c2e4f80">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/created"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N8a030040c3ea4ecd8cb39e4bba6d6477">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb59707a690254ccf91d3889e135656b1">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/name"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N6a6f74865f594518955344c79b9e545a">
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Organization"/>
-    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/member">
-    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Friendship"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:range rdf:nodeID="Nf992bb9c3c1146f7b80bf3fe691288eb"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5dc99728838b421b88e2a443d95e353f">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+  <rdf:Description rdf:nodeID="N087e41d1234a4677bf8989e26e5319b9">
     <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/member"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N994a26e96b414226aebbb00b2fb6bba6">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/name"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:someValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd36c830ae2bc495684dabcda2888bba0">
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Point">
+    <rdfs:subClassOf rdf:nodeID="Ndc287a1032c941af806b679fed40fa7f"/>
+    <rdfs:subClassOf rdf:nodeID="N0ace62bb77a74735a10f58d05a426b5b"/>
+    <rdfs:subClassOf rdf:nodeID="N51e19076df2743aeb89667aa68f7eb4f"/>
+    <rdfs:subClassOf rdf:nodeID="N08020c652e80482eafae58a4edad7c71"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb8327ac9405f434881785bf1bf90a55b">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/body"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd12d375ee7dc45bf90373e673280d532">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Tag"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/tag"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Vote">
+    <rdfs:subClassOf rdf:nodeID="Nd09b7cb7027048a79579cee0c0f44651"/>
+    <rdfs:subClassOf rdf:nodeID="N3fbbe5ba316241f895e2227013ff8c16"/>
+    <rdfs:subClassOf rdf:nodeID="Ndb59c8a37e0c4fb28aa697121c2e4f80"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2d503f27253f4d6f8237594b724c0bb7">
     <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
     <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc3f13b59c47147de9f90295f7f12897a">
+  <rdf:Description rdf:nodeID="Ne90aec5765234528a68145e2eb40de10">
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/visibleProfile"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc62e3db5fc46433080e1d995eee89601">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Comment"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N37b4682dc102423eb9d0b719826c792a">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Group"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na594d16bbdb04b7091ad013840ccfad4">
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/created"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/professionalActivity">
+    <rdfs:domain rdf:nodeID="Nc079409934bd450bbbe52461bffd152e"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/Tag">
+    <rdfs:subClassOf rdf:nodeID="N63ad10e7c0c54868868890ac5ea78883"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne9f108693fd344d89d7781e0b602c87f">
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/creator"/>
+    <owl:someValuesFrom rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/hasStep">
+    <rdfs:domain rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
+    <rdfs:range rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3c56bc5044354eada65465ce8bb01ed2">
     <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Comment"/>
     <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Article"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/socialparticipation/opa/hasReply">
-    <rdfs:range rdf:resource="http://purl.org/socialparticipation/opa/Comment"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="Ndd6ca58d86f64129a54271d509752183"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N30fd330083304f6e94df8e3357126bbf">
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/polarity"/>
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  <rdf:Description rdf:nodeID="N5166b8956afa49bbaf4970a645d0d103">
+    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/name"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N61b06d55da624428afadaff554ceb217">
-    <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/modified"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N03246fb73ca0465a95069bdfa9bdcc30">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <owl:onProperty rdf:resource="http://purl.org/socialparticipation/opa/atype"/>
+  <rdf:Description rdf:nodeID="N9084cd7ca78c440e86e9b50ff09ff717">
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Participant"/>
+    <owl:unionOf rdf:resource="http://purl.org/socialparticipation/opa/Member"/>
   </rdf:Description>
 </rdf:RDF>
